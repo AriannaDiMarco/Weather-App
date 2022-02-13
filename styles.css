@@ -1,0 +1,75 @@
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.container {
+  border: 2px solid #b6da9c;
+  border-radius: 10px;
+  height: 390px;
+  width: 900px;
+  margin-top: 20px;
+}
+
+.mb-3 {
+  width: 200px;
+  margin-top: 20px;
+}
+
+#search-button {
+  margin-top: 20px;
+}
+
+#current-button {
+  margin-top: 20px;
+}
+
+#city {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 2px solid #006ec5;
+  width: 120px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 7px;
+}
+
+.temperature {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  width: 230px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 120px;
+  height: 230px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.future-days {
+  border: 2px solid #cce2f3;
+  margin-top: 25px;
+  margin-left: -10px;
+  border-radius: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+.min-max {
+  font-weight: bold;
+}
+.col-5 {
+  text-align: center;
+}
+
+.col-3 {
+  text-align: center;
+}
+
+.frame {
+  border: 2px solid #cce2f3;
+  padding: 8px 8px 8px 8px;
+}
+
+#date {
+  margin-bottom: 0px;
+  font-style: italic;
+}
