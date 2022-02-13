@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Parcel Sandbox</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css">
+    
+  </head>
+  <body>
+      <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <form>
+                <div class="row">
+                  <div class="col-6">
+                <div class="mb-3" id="search">
+                  <input
+                    type="search"
+                    class="form-control"
+                    placeholder="Enter city..."
+                    id = "search-city"
+                  />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <button type="submit" class="btn btn-primary" id="search-button">Search</button>
+                  <button type="button" class="btn btn-success" id="current-button">Current</button>
+                </div>
+              </div> 
+            
+              </form>
+              <p id="city">Teramo</p>
+              
+              <div class="temperature">
+              <h1 id="temp-value">
+                9°C
+                </br>
+                CLEAR SKY
+              </br>
+                   
+                  
+              </h1>
+              <p id = "date">Sat, 15 Jan</p>
+              <p id = "time">
+                16:22
+              </p>
+            </div>
+            </div>
+    
+            <div class="future-days col-6">
+            </br>  
+              <div class="row"> 
+              
+                <div class="col-5">
+                </br>
+                </br>
+                  Sun, 16 Jan
+                  </br>
+                  </br>
+                  Mon, 17 Jan
+                  </br>
+                  </br>
+                  Tue, 18 Jan
+                  </br>
+                  </br>
+                  Wed, 19 Jan
+                  </br>
+                  </br>
+                  Thu, 20 Jan
+                </div>
+    
+                <div class="col-1">
+                  </br>
+                  </br>
+                  ☀
+                  </br>
+                  </br>
+                  ☀
+                  </br>
+                  </br>
+                  ☀
+                  </br>
+                  </br>
+                  ☀
+                   </br>
+                   </br>
+                  🌧
+                </div>
+    
+                <div class="col-3">
+                 <span class="min-max">Min</span>
+                  </br>
+                  </br>
+                  <span class="frame">14°C</span>
+                  </br>
+                  </br>
+                  <span class="frame">12°C</span>
+                  </br>
+                  </br>
+                  <span class="frame">11°C</span>
+                  </br>
+                  </br>
+                  <span class="frame">11°C</span>
+                  </br>
+                  </br>
+                  <span class="frame">11°C</span>
+                </div>
+    
+                <div class="col-3">
+                  <span class="min-max">Max</span>
+                  </br>
+                  </br>
+                  <span class="frame">2°C</span>
+                  </br>
+                  </br>
+                  <span class="frame">1°C</span>
+                  </br>
+                  </br>
+                  <span class="frame">0°C</span>
+                  </br>
+                  </br>
+                  <span class="frame">1°C</span>
+                  </br>
+                  </br>
+                  <span class="frame">2°C</span>
+                  </br>
+                  </br> 
+                </div>
+                </div>
+              </div>
+            </div>
+          <script src="src/index.js">
+            
+          </script>
+        </div>
+      </body>
+</html>
+
