@@ -43,6 +43,12 @@ function displayRealTemp(response) {
   description = description.toUpperCase();
   let value = document.querySelector("h1");
   value.innerHTML = `${temperature}°C	</br> ${description}`;
+  let windElement = document.querySelector("#wind-speed");
+  let windSpeed = Math.round(response.data.wind.speed);
+  windElement.innerHTML = `Wind: ${windSpeed} km/h`;
+  let humidityElement = document.querySelector("#humidity-value");
+  let humidityValue = Math.round(response.data.main.humidity);
+  humidityElement.innerHTML = `Humidity: ${humidityValue}%`;
 }
 function showCity(event) {
   event.preventDefault();

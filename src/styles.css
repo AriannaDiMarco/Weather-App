@@ -1,11 +1,14 @@
 h1 {
+  position: relative;
   font-size: 30px;
   font-weight: bold;
+  top: -25px;
+  right: -80px;
 }
 .container {
   border: 2px solid #b6da9c;
   border-radius: 10px;
-  height: 390px;
+  height: 420px;
   width: 900px;
   margin-top: 20px;
 }
@@ -30,6 +33,7 @@ h1 {
   text-align: center;
   font-size: 15px;
   border-radius: 7px;
+  font-weight: bold;
 }
 
 .temperature {
@@ -45,7 +49,6 @@ h1 {
 }
 
 .future-days {
-  border: 2px solid #cce2f3;
   margin-top: 25px;
   margin-left: -10px;
   border-radius: 10px;
@@ -70,8 +73,16 @@ h1 {
 }
 
 #date {
+  position: relative;
+  text-align: left;
   margin-bottom: 0px;
   font-style: italic;
+  bottom: -10px;
+}
+
+#time {
+  position: relative;
+  bottom: -10px;
 }
 
 a {
@@ -81,4 +92,16 @@ a {
 
 .link {
   font-size: small;
+}
+
+#humidity-value {
+  position: relative;
+  top: -30px;
+  right: -80px;
+}
+
+#wind-speed {
+  position: relative;
+  right: -80px;
+  top: -20px;
 }
