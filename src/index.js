@@ -38,11 +38,14 @@ if (actualMinutes < 10) {
 }
 
 function displayRealTemp(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let description = `${response.data.weather[0].description}`;
   description = description.toUpperCase();
   let value = document.querySelector("h1");
-  value.innerHTML = `${temperature}°C	</br> ${description}`;
+  value.innerHTML = `${temperature}°C`;
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = `${description}`;
   let windElement = document.querySelector("#wind-speed");
   let windSpeed = Math.round(response.data.wind.speed);
   windElement.innerHTML = `🌀 Wind: ${windSpeed} km/h`;
@@ -91,15 +94,21 @@ function getCurrentPosition() {
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
 
-//function showF() {
-//let valueF = document.querySelector("#tempValue");
-//valueF.innerHTML = "48°F </br> ⛅";
-//}
-//function showC() {
-//let valueC = document.querySelector("#tempValue");
-//valueC.innerHTML = "9°C </br> ⛅";
-//}
-//let celsius = document.querySelector("#celsius");
-//let fahreneit = document.querySelector("#fahreneit");
-//fahreneit.addEventListener("click", showF);
-//celsius.addEventListener("click", showC);
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-value");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp) + "°F";
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-value");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature) + "°C";
+}
+
+let celsiusTemperature = null;
+let fahrenheitValue = document.querySelector("#fahrenheit");
+fahrenheitValue.addEventListener("click", displayFahrenheitTemperature);
+let celsiusValue = document.querySelector("#celsius");
+celsiusValue.addEventListener("click", displayCelsiusTemperature);
