@@ -1,6 +1,6 @@
 h1 {
   position: relative;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: bold;
   top: -25px;
   right: -80px;
@@ -38,7 +38,7 @@ h1 {
 
 .temperature {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+  position: relative;
   width: 230px;
   display: block;
   margin: 0 auto;
@@ -46,6 +46,7 @@ h1 {
   height: 230px;
   padding-top: 40px;
   padding-bottom: 40px;
+  top: -20px;
 }
 
 .future-days {

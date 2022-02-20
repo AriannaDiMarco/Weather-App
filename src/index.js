@@ -49,6 +49,11 @@ function displayRealTemp(response) {
   let humidityElement = document.querySelector("#humidity-value");
   let humidityValue = Math.round(response.data.main.humidity);
   humidityElement.innerHTML = `💧 Humidity: ${humidityValue}%`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function showCity(event) {
   event.preventDefault();
