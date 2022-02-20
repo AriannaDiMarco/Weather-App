@@ -12,14 +12,16 @@ h2 {
 
 #wind-speed {
   position: relative;
-  right: -130px;
+  right: -120px;
   top: -100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #humidity-value {
   position: relative;
-  right: -133px;
+  right: -120px;
   top: -110px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .container {
   border: 2px solid #b6da9c;
@@ -45,9 +47,9 @@ h2 {
 #city {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 2px solid #006ec5;
-  width: 150px;
+  width: 200px;
   text-align: center;
-  font-size: 15px;
+  font-size: 17px;
   border-radius: 7px;
   font-weight: bold;
 }
@@ -57,7 +59,7 @@ h2 {
   margin: 0 auto;
   border-radius: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 40px;
 }
 
@@ -85,13 +87,24 @@ h2 {
   display: block;
   margin: -20px auto;
   padding-top: 50px;
+  width: 100px;
 }
 #description {
   display: block;
   margin: -20px auto;
 }
 
+#date {
+  font-style: italic;
+}
+
 #time {
   position: relative;
   top: -15px;
+  font-style: italic;
+}
+
+#unit-link {
+  position: relative;
+  top: -10px;
 }
