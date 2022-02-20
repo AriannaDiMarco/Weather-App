@@ -38,7 +38,7 @@ h1 {
 
 .temperature {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-align: center;
+
   width: 230px;
   display: block;
   margin: 0 auto;
@@ -77,12 +77,12 @@ h1 {
   text-align: left;
   margin-bottom: 0px;
   font-style: italic;
-  bottom: -40px;
+  bottom: -30px;
 }
 
 #time {
   position: relative;
-  bottom: -40px;
+  bottom: -30px;
 }
 
 a {
@@ -104,4 +104,14 @@ a {
   position: relative;
   right: -80px;
   top: -20px;
+}
+
+#icon {
+  position: relative;
+  top: 100px;
+}
+
+#description {
+  position: relative;
+  right: -80px;
 }
