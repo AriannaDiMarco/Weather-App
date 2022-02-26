@@ -37,6 +37,43 @@ if (actualMinutes < 10) {
   actualTime.innerHTML = `${actualHour}:${actualMinutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `         <div class="col-5">
+                </br>
+                
+                  ${day}
+                  </div>
+    
+                <div class="col-1">
+                  </br>
+                  ☀
+                  </div>
+                <div class="col-3">
+                </br>
+                  <span>14°C</span>
+                   </div>
+                <div class="col-3">
+                 </br>
+                  <span>2°C</span>
+                  </div>
+                `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  let apiKey = "5af0edc85cf70b7e91e5873cf898c017";
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayRealTemp(response) {
   celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(celsiusTemperature);
@@ -57,6 +94,7 @@ function displayRealTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 function showCity(event) {
   event.preventDefault();
@@ -113,3 +151,5 @@ let fahrenheitValue = document.querySelector("#fahrenheit");
 fahrenheitValue.addEventListener("click", displayFahrenheitTemperature);
 let celsiusValue = document.querySelector("#celsius");
 celsiusValue.addEventListener("click", displayCelsiusTemperature);
+
+displayForecast();

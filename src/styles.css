@@ -108,3 +108,8 @@ h2 {
   position: relative;
   top: -10px;
 }
+
+#forecast {
+  margin-top: 45px;
+  font-size: 20px;
+}
