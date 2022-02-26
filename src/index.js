@@ -40,12 +40,19 @@ if (actualMinutes < 10) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   return days[day];
 }
 
 function displayForecast(response) {
-  console.log(response);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -56,25 +63,26 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `         <div class="col-3">
-                </br>
-                
-                  ${formatDay(forecastDay.dt)}
+                </br><em>
+                  ${formatDay(forecastDay.dt)}</em>
                   </div>
-    
                 <div class="col-3" id="forecast-icon">
                   </br>
                   <img src = "https://openweathermap.org/img/wn/${
                     forecastDay.weather[0].icon
                   }@2x.png" width="40"/>
-                  
                   </div>
-                <div class="col-3">
+                <div class="col-3" id="min">
                 </br>
-                  <span>${Math.round(forecastDay.temp.min)}°C</span>
+                  <span><strong>${Math.round(
+                    forecastDay.temp.min
+                  )}°C</strong></span>
                    </div>
-                <div class="col-3">
+                <div class="col-3" id="max">
                  </br>
-                  <span>${Math.round(forecastDay.temp.max)}°C</span>
+                  <span><strong>${Math.round(
+                    forecastDay.temp.max
+                  )}°C</strong></span>
                   </div>
                 `;
     }
@@ -110,6 +118,7 @@ function displayRealTemp(response) {
   );
   getForecast(response.data.coord);
 }
+
 function showCity(event) {
   event.preventDefault();
   let cityChosen = document.querySelector("#search-city");
@@ -129,7 +138,9 @@ function displayCurrent(response) {
   let currentDescription = `${response.data.weather[0].description}`;
   currentDescription = currentDescription.toUpperCase();
   let h1 = document.querySelector("h1");
-  h1.innerHTML = `${currentTemp}°C </br> ${currentDescription}`;
+  h1.innerHTML = `${currentTemp}°C`;
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = `${currentDescription}`;
   let city = document.querySelector("#city");
   city.innerHTML = `${currentCity}`;
 }
@@ -159,8 +170,15 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature) + "°C";
 }
 
+function search(city) {
+  let apiKey = "5af0edc85cf70b7e91e5873cf898c017";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayRealTemp);
+}
 let celsiusTemperature = null;
 let fahrenheitValue = document.querySelector("#fahrenheit");
 fahrenheitValue.addEventListener("click", displayFahrenheitTemperature);
 let celsiusValue = document.querySelector("#celsius");
 celsiusValue.addEventListener("click", displayCelsiusTemperature);
+
+search("Teramo");

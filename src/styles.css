@@ -4,7 +4,7 @@ h2 {
   font-size: 27px;
   font-weight: bold;
   top: -100px;
-  right: -80px;
+  right: -60px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: 230px;
   text-align: center;
@@ -12,16 +12,18 @@ h2 {
 
 #wind-speed {
   position: relative;
-  right: -120px;
+  right: -100px;
   top: -100px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
 }
 
 #humidity-value {
   position: relative;
-  right: -120px;
+  right: -100px;
   top: -110px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
 }
 .container {
   border: 2px solid #b6da9c;
@@ -29,6 +31,7 @@ h2 {
   height: 550px;
   width: 1000px;
   margin-top: 20px;
+  background-color: whitesmoke;
 }
 
 .mb-3 {
@@ -94,9 +97,13 @@ h2 {
 }
 
 #forecast {
-  margin-top: 45px;
+  margin-top: 40px;
   font-size: 20px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 40px;
+}
+
+#forecast-icon {
+  text-align: right;
 }
