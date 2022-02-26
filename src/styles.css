@@ -45,29 +45,13 @@ h2 {
 }
 
 #city {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   border: 2px solid #006ec5;
   width: 200px;
   text-align: center;
   font-size: 17px;
   border-radius: 7px;
   font-weight: bold;
-}
-
-.future-days {
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 17px;
-  line-height: 40px;
-}
-
-.min-max {
-  font-weight: bold;
-}
-.col-5 {
-  text-align: center;
 }
 
 .col-3 {
@@ -112,4 +96,7 @@ h2 {
 #forecast {
   margin-top: 45px;
   font-size: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 40px;
 }
