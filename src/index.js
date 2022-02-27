@@ -133,6 +133,7 @@ let searchButton = document.querySelector("form");
 searchButton.addEventListener("submit", showCity);
 
 function displayCurrent(response) {
+  console.log(response);
   let currentCity = `${response.data.name}`;
   let currentTemp = Math.round(response.data.main.temp);
   let currentDescription = `${response.data.weather[0].description}`;
@@ -143,6 +144,12 @@ function displayCurrent(response) {
   h2.innerHTML = `${currentDescription}`;
   let city = document.querySelector("#city");
   city.innerHTML = `${currentCity}`;
+  city.innerHTML = city.innerHTML.toUpperCase();
+  let weatherIcon = document.querySelector("#icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function showCurrent(position) {
   let lat = `	${position.coords.latitude}`;
